@@ -1,0 +1,44 @@
+package Noriter;
+import java.util.StringTokenizer;
+import java.util.Scanner;
+
+public class PatternClassTest {
+	public static void main(String[] args) {
+		String text;
+		String text2;
+		
+// input target sentence to text
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Type target sentence: ");
+		text = sc.nextLine();
+// input comparing sentence to text2		
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println("Type the sentence you try to compare: ");
+		text2 = sc2.nextLine();
+		
+// Tokenize the comparing sentence and input the number of words to wordcount
+		StringTokenizer st = new StringTokenizer(text2);
+		int wordcount = st.countTokens();
+
+//input each tokenized words into the array 'arr'. The array secures the area by the number of the tokenized words(wordcount)
+		String[] arr = new String[wordcount];
+		int idx = 0;
+		
+		while (st.hasMoreTokens()) {
+			arr[idx] = st.nextToken();
+			idx++;
+		}
+
+		
+//Print any different word from the target sentence
+		int i;
+		for (i = 0; i < arr.length; i++) {
+		
+		if (text.contains(arr[i])) {
+		} else {
+			System.out.println(arr[i]);
+		}
+		}
+		
+	}
+}
